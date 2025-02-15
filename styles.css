@@ -1,0 +1,202 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #f4f4f4;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #e48818, #da0d9d);
+    padding: 50px;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 1s ease-in-out;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    opacity: 0.9;
+}
+
+/* Navigation Panel */
+nav {
+    background: linear-gradient(135deg, #da0d9d, #e48818);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+/* Sliders */
+.slider {
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff4081, #ff80ab);
+    animation: slideUp 2s infinite alternate;
+}
+
+
+/* Sections */
+section {
+    margin: 80px auto;
+    padding: 60px;
+    max-width: 900px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+section:hover {
+    transform: scale(1.03);
+}
+
+h2 {
+    color: #24f30e;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h3 {
+    color: #2a5298;
+}
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.07);
+}
+
+/* Prediction Section */
+.highlighted {
+    background: linear-gradient(135deg, #ec744f, #ff9800);
+    color: white;
+    padding: 90px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.highlighted h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 33px;
+}
+
+input, select {
+    width: 95%;
+    padding: 22px;
+    margin: 30px 0;
+    border-radius: 12px;
+    border: none;
+    font-size: 2.3rem;
+    font-weight: bold;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: black;
+}
+
+select {
+    color: gray;
+}
+
+select:valid {
+    color: black;
+}
+
+button {
+    background: #ff4081;
+    color: white;
+    padding: 26px 45px;
+    border: none;
+    border-radius: 15px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #e91e63;
+    transform: scale(1.08);
+}
+
+/* Prediction Result Animation */
+.prediction-text {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-top: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s;
+    transform: translateY(15px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: #1e3c72;
+    color: white;
+    padding: 30px;
+    font-size: 1.66rem;
+    margin-top: 80px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

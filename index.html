@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizing Secrets: Decode Your Fit</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function predictShoeSize() {
+            let shirtSize = parseFloat(document.getElementById("shirtSize").value);
+            let gender = parseInt(document.getElementById("gender").value);
+            
+            let intercept = 8.6139;
+            let coefShirt = 0.3525;
+            let coefGender = 0.7207;
+            
+            let predictedShoeSize = intercept + (coefShirt * shirtSize) + (coefGender * gender) - 1.5;
+            let result = document.getElementById("predictionResult");
+            result.innerText = "Predicted Shoe Size: " + predictedShoeSize.toFixed(2);
+            result.classList.add("fade-in");
+            setTimeout(() => result.classList.remove("fade-in"), 2000);
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#eda">EDA</a></li>
+            <li><a href="#clustering">Clustering</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#prediction">Prediction</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Sizing Secrets: Decode Your Fit</h1>
+        <p class="subtitle">Exploring the relationship between Shirt Size, Shoe Size, and Gender</p>
+    </header>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Does Shirt Size correlate with Shoe Size? Are there gender-based differences? Let's dive into the data to uncover insights.</p>
+    </section>
+
+    <section id="data">
+        <h2>The Data Behind the Story</h2>
+        <p>We collected data on Shirt Size, Shoe Size, and Gender from 99 participants to analyze patterns.</p>
+    </section>
+
+    <section id="eda">
+        <h2>Exploratory Data Analysis</h2>
+        <h3>Shirt Size Distribution</h3>
+        <img src="Shirt_size_distribution.png" alt="Shirt Size Distribution">
+        <p>Most participants wear M and L size shirts, with fewer in XS and 3XL sizes.</p>
+        
+        <h3>Shoe Size Distribution</h3>
+        <img src="Shoe_size_distribution.png" alt="Shoe Size Distribution">
+        <p>Shoe sizes range from 4 to 12, with the majority around sizes 8-10.</p>
+        
+        <h3>Shoe Size by Gender</h3>
+        <img src="shoesize_gende.png" alt="Shoe Size by Gender">
+        <p>Males generally have a wider range of shoe sizes, whereas females mostly fall within a smaller range.</p>
+    </section>
+
+    <section id="clustering">
+        <h2>Cluster Analysis</h2>
+        <p>We applied K-Means clustering to identify natural groupings in the data.</p>
+        <img src="elbowmethod.png" alt="Elbow Method for Optimal Clusters">
+        <p>The Elbow Method suggests that 3 clusters are optimal for segmenting our data.</p>
+    </section>
+
+    <section id="insights">
+        <h2>Key Insights</h2>
+        <ul>
+            <li>Larger Shirt Sizes tend to have larger Shoe Sizes showing a linear relation.</li>
+            <li>Males show more variation in Shoe Size compared to Females.</li>
+            <li>Females have relatively smaller Shoe Sizes.</li>
+        </ul>
+    </section>
+
+    <section id="prediction" class="highlighted">
+        <h2>Predict Your Shoe Size</h2>
+        <label for="shirtSize">Enter Shirt Size (0 for XS, 1 for S, 2 for M, etc.):</label>
+        <input type="number" id="shirtSize" min="0" max="6" placeholder="Enter Shirt Size">
+
+        <select id="gender">
+            <option value="" disabled selected hidden>Gender</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+        
+        <button onclick="predictShoeSize()">Predict</button>
+        <p id="predictionResult" class="prediction-text"></p>
+    </section>
+
+    <footer>
+        <p>Created for Data Storytelling Project | February 2025 | By Kesav Patneedi</p>
+    </footer>
+</body>
+</html>
